@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Fragment1">
+
+   <ImageView
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:src="@drawable/phone"
+       android:id="@+id/secondImg"
+       android:scaleType="fitXY"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:layout_alignTop="@+id/txtgaming2"
+      android:text="Gaming Mobile"
+      app:layout_constraintBottom_toTopOf="@+id/txtgaming2"
+      app:layout_constraintLeft_toLeftOf="parent"
+      android:layout_margin="@dimen/dp15"
+       android:textSize="@dimen/titlesize"
+       android:textColor="@color/white"/>
+
+   <TextView
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:text="The latest and best gaming smart phone"
+       android:textColor="@android:color/white"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:layout_margin="@dimen/dp15"
+       android:id="@+id/txtgaming2"
+       />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

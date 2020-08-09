@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="250dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/thirdCosntraint"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/sofa"
+            android:id="@+id/thirdImg"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_percent="0.1"
+            android:orientation="vertical"
+            android:id="@+id/thirdGuideline"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="collection"
+            app:layout_constraintLeft_toRightOf="@+id/thirdGuideline"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginVertical="10dp"
+            android:id="@+id/collection"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Arrival"
+            app:layout_constraintLeft_toRightOf="@+id/thirdGuideline"
+            android:textSize="30sp"
+            app:layout_constraintTop_toBottomOf="@+id/collection"
+            android:layout_marginVertical="10dp"
+            android:textColor="@color/black"
+            android:id="@+id/description"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Winter"
+            app:layout_constraintLeft_toRightOf="@+id/thirdGuideline"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            android:layout_marginVertical="10dp"
+            android:id="@+id/weather"/>
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/weather"
+            app:layout_constraintLeft_toRightOf="@+id/thirdGuideline"
+            android:layout_marginVertical="60dp"
+            android:id="@+id/thirdView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/thirdGuideline"
+            app:layout_constraintBottom_toTopOf="@+id/thirdView"
+            android:text="Shop Now"
+            android:textColor="@color/black"
+            android:id="@+id/shopNow"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toTopOf="@+id/thirdView"
+            app:layout_constraintLeft_toRightOf="@+id/shopNow"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

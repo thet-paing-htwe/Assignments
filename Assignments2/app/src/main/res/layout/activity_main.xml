@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+
+
+   <ImageView
+       android:layout_width="fill_parent"
+       android:layout_height="150dp"
+       android:background="@android:color/holo_blue_light"
+       android:src="@drawable/onlineshop"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:id="@+id/firstImg"
+        />
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+      app:cardCornerRadius="10dp"
+      android:layout_margin="15dp"
+      app:layout_constraintTop_toBottomOf="@+id/firstImg"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:id="@+id/cardView1"
+      >
+
+
+      <FrameLayout
+          android:layout_width="fill_parent"
+          android:layout_height="match_parent"
+         android:id="@+id/fragmentContainer"
+         />
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="top|end">
+         <Button
+             android:layout_width="@dimen/radbtn"
+             android:layout_height="@dimen/radbtn"
+             android:id="@+id/btnTrasnsaction1"
+             app:layout_constraintRight_toLeftOf="@+id/btnTrasnsaction2"
+             app:layout_constraintTop_toTopOf="parent"
+             android:background="@drawable/radio1"
+             android:layout_margin="5dp"
+             />
+         <Button
+             android:layout_width="@dimen/radbtn"
+             android:layout_height="@dimen/radbtn"
+             android:id="@+id/btnTrasnsaction2"
+             app:layout_constraintRight_toLeftOf="@+id/btnTrasnsaction3"
+             app:layout_constraintTop_toTopOf="parent"
+             android:background="@drawable/radio2"
+             android:layout_margin="5dp"
+             />
+         <Button
+             android:layout_width="@dimen/radbtn"
+             android:layout_height="@dimen/radbtn"
+             android:id="@+id/btnTrasnsaction3"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             android:background="@drawable/radio3"
+             android:layout_margin="5dp"
+
+             />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.cardview.widget.CardView>
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+      android:id="@+id/brandConstraint"
+      app:layout_constraintTop_toBottomOf="@+id/cardView1"
+       android:layout_marginVertical="@dimen/dp10">
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+         android:scaleType="fitXY"
+         android:src="@drawable/search"/>
+      <androidx.constraintlayout.widget.Guideline
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+         app:layout_constraintGuide_percent="0.5"
+         android:orientation="vertical"
+         android:id="@+id/guideline2"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/guideline2"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintBottom_toBottomOf="parent"
+         android:text="Browse by"
+         android:textSize="@dimen/dp15"
+         android:textColor="@color/white"
+          android:id="@+id/browse"/>
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="@dimen/dp30"
+         android:text="Brand"
+         app:layout_constraintLeft_toRightOf="@+id/guideline2"
+         app:layout_constraintTop_toBottomOf="@+id/browse"
+         android:background="@color/gold"
+          android:textColor="@color/white"/>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@+id/brandConstraint"
+          android:orientation="horizontal"
+          android:layout_margin="20dp"
+          android:id="@+id/latestArrivalConstraint"
+          >
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:text="Latest Arrival"
+            android:textSize="@dimen/titlesize"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"/>
+         <Button
+             android:layout_width="0dp"
+             android:layout_height="20dp"
+            android:text="see all"
+            android:background="@color/gold"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"
+
+            />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+   <fragment
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:name="com.tphtwe.assignments2.fragments.RecyclerFragment1"
+       android:id="@+id/fragment1recycler"
+       app:layout_constraintTop_toBottomOf="@+id/latestArrivalConstraint"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:layout_margin="@dimen/dp5"
+     />
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/fragment1recycler"
+      android:layout_marginVertical="@dimen/dp5"
+       android:id="@+id/uploadConstraint">
+      <ImageView
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+         android:scaleType="fitXY"
+         android:src="@drawable/search"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+          android:id="@+id/fifthImg"/>
+      <androidx.constraintlayout.widget.Guideline
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+         android:orientation="vertical"
+          app:layout_constraintGuide_percent="0.5"
+          android:id="@+id/guideline"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         android:text="Can't "
+         android:textSize="@dimen/dp15"
+         android:textColor="@color/white"
+         app:layout_constraintLeft_toRightOf="@+id/guideline"
+         android:layout_marginVertical="25dp"
+          app:layout_constraintTop_toTopOf="parent"
+          android:id="@+id/cant"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Find "
+          android:textSize="@dimen/dp15"
+          android:textColor="@color/black"
+          app:layout_constraintLeft_toRightOf="@+id/cant"
+          app:layout_constraintBaseline_toBaselineOf="@+id/cant"
+          android:id="@+id/find"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="What You"
+          android:textSize="@dimen/dp15"
+          android:textColor="@color/white"
+          app:layout_constraintLeft_toRightOf="@+id/find"
+          app:layout_constraintBaseline_toBaselineOf="@+id/cant"
+          android:id="@+id/what"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Looking For?"
+          android:textSize="@dimen/dp15"
+          android:textColor="@color/black"
+          app:layout_constraintLeft_toRightOf="@+id/guideline"
+          app:layout_constraintTop_toBottomOf="@+id/cant"
+          android:id="@+id/looking"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Search By"
+          android:textSize="@dimen/dp15"
+          android:textColor="@color/black"
+          app:layout_constraintLeft_toRightOf="@+id/guideline"
+          app:layout_constraintTop_toBottomOf="@+id/looking"
+          android:id="@+id/search"/>
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="@dimen/dp20"
+         android:text="Upload Picture"
+         android:textColor="@color/white"
+         android:background="@color/gold"
+         android:paddingHorizontal="@dimen/dp15"
+          app:layout_constraintLeft_toRightOf="@+id/guideline"
+          app:layout_constraintTop_toBottomOf="@+id/search"
+          android:layout_marginVertical="@dimen/dp30"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/uploadConstraint"
+       android:layout_margin="@dimen/dp20"
+       android:id="@+id/chooseLinear">
+      <View
+          android:layout_width="1dp"
+          android:layout_height="@dimen/dp30"
+         android:background="@color/black"
+          android:id="@+id/viewChoose"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Choose By Country"
+          android:textColor="@color/black"
+          android:textSize="@dimen/titlesize"
+          android:id="@+id/choose"
+          android:layout_marginHorizontal="@dimen/dp5"/>
+   </LinearLayout>
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/chooseLinear"
+      android:layout_margin="25dp"
+       android:id="@+id/fragment2Constraint">
+      <fragment
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+         android:id="@+id/fragment2recycler"
+          android:name="com.tphtwe.assignments2.fragments.RecyclerFragment2"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toTopOf="parent"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+      app:layout_constraintTop_toBottomOf="@+id/fragment2Constraint"
+       android:layout_marginVertical="@dimen/dp10"
+       android:id="@+id/serviceConstraint">
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="fitXY"
+         android:src="@drawable/service"/>
+      <androidx.constraintlayout.widget.Guideline
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+         android:orientation="vertical"
+         app:layout_constraintGuide_percent="0.5"
+          android:id="@+id/guideline3"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         app:layout_constraintLeft_toRightOf="@+id/guideline3"
+         app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginVertical="70dp"
+         android:textColor="@color/black"
+         android:text="Need Help?"
+          android:id="@+id/need"
+          android:textSize="@dimen/dp15"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintLeft_toRightOf="@+id/guideline3"
+          app:layout_constraintTop_toBottomOf="@+id/need"
+          android:textColor="@color/white"
+          android:text="Customer Service"
+          android:id="@+id/customer"
+          android:textSize="@dimen/dp15"/>
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="@dimen/dp30"
+         android:text="Call Now"
+         app:layout_constraintTop_toBottomOf="@+id/customer"
+         app:layout_constraintLeft_toRightOf="@+id/guideline3"
+         android:background="@color/gold"
+         android:textColor="@color/white"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/serviceConstraint"
+      android:id="@+id/popular"
+       android:layout_margin="@dimen/dp20">
+      <View
+          android:layout_width="2dp"
+          android:layout_height="@dimen/dp30"
+         android:id="@+id/view2"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+          android:background="@color/black"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         app:layout_constraintLeft_toRightOf="@+id/view2"
+         app:layout_constraintTop_toTopOf="parent"
+         android:text="Popular Product"
+         android:textSize="@dimen/titlesize"
+         android:layout_marginHorizontal="@dimen/dp5"/>
+      <fragment
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+         android:id="@+id/fragment3recycler"
+         android:name="com.tphtwe.assignments2.fragments.RecyclerFragment3"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/view2"
+         android:layout_marginVertical="@dimen/dp10"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>

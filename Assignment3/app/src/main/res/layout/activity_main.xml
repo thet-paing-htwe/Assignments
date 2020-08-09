@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@android:color/darker_gray">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/white">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Discover"
+    android:textSize="@dimen/fragmenttitle"
+    android:textColor="@color/black"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_margin="10dp"
+    android:id="@+id/txtDiscover"/>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txtDiscover"
+            android:name="com.tphtwe.assignment3.fragments.FirstFragment"
+            android:layout_margin="5dp"
+            android:id="@+id/firstFragment"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trending"
+            android:textSize="@dimen/fragmenttitle"
+            app:layout_constraintTop_toBottomOf="@+id/firstFragment"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:id="@+id/txtTrending"/>
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firstFragment"
+            android:layout_marginVertical="15dp"
+            android:id="@+id/arrow"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show all"
+            app:layout_constraintRight_toLeftOf="@+id/arrow"
+           app:layout_constraintTop_toBottomOf="@+id/firstFragment"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtTrending"
+            android:textSize="20sp"/>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txtTrending"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="5dp"
+            android:name="com.tphtwe.assignment3.fragments.SecondFragment"
+            android:id="@+id/secondFragment"/>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/thirdFragment"
+            android:name="com.tphtwe.assignment3.fragments.ThirdFragment"
+            app:layout_constraintTop_toBottomOf="@+id/secondFragment"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginVertical="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Best Selling"
+            android:textSize="@dimen/fragmenttitle"
+            app:layout_constraintTop_toBottomOf="@+id/thirdFragment"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:id="@+id/txtbestSell"/>
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdFragment"
+            android:layout_marginVertical="15dp"
+            android:id="@+id/arrow2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show all"
+            android:id="@+id/show"
+            app:layout_constraintRight_toLeftOf="@+id/arrow2"
+            app:layout_constraintTop_toBottomOf="@+id/thirdFragment"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtbestSell"
+            android:textSize="20sp"/>
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txtbestSell"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="5dp"
+            android:name="com.tphtwe.assignment3.fragments.FourthFragment"
+            android:id="@+id/fourthFragment"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
